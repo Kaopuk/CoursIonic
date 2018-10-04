@@ -8,5 +8,9 @@
 
 
 <ion-content padding>
-<p>Plus d'informations pour {{ name }}</p>
+  <ion-card>
+      <ion-card-header>{{ appareil.name}}</ion-card-header>
+      <ion-card-content><p *ngFor="let line of appareil.description">{{ line }}</p></ion-card-content>
+
+  </ion-card>
 </ion-content>
