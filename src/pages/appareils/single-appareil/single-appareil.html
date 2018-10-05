@@ -11,7 +11,7 @@
 
 
 <ion-content padding>
-  <ion-card>
+  <ion-card [ngClass]="{'is-on': appareil.isOn, 'is-off': !appareil.isOn}">
       <ion-card-header>{{ appareil.name }}</ion-card-header>
       <ion-card-content><p *ngFor="let line of appareil.description">{{ line }}</p></ion-card-content>
   </ion-card>
@@ -19,10 +19,16 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <button ion-button full color="danger">Eteindre</button>
+        <button ion-button
+                full
+                [disabled]="!appareil.isOn"
+                color="danger" (click)="onToggleAppareil()">Eteindre</button>
       </ion-col>
       <ion-col>
-        <button ion-button full color="secondary">Allumer</button>
+        <button ion-button
+                full
+                [disabled]="appareil.isOn"
+                color="secondary" (click)="onToggleAppareil()">Allumer</button>
       </ion-col>
 
     </ion-row>
