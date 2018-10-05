@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {NavController} from "ionic-angular";
 import {SingleAppareilPage} from "./single-appareil/single-appareil";
+import {ModalController} from "ionic-angular";
+
 
 @Component({
   selector: 'page-appareils',
@@ -34,10 +35,11 @@ export class AppareilsPage{
     }
   ];
 
-    constructor(private navCtrl: NavController) {
+    constructor(private modalCtrl: ModalController) {
     }
 
     onLoadAppareil(appareil: {name: string, description: string[]}) {
-      this.navCtrl.push(SingleAppareilPage, {appareil: appareil});
+      let modal = this.modalCtrl.create(SingleAppareilPage, {appareil: appareil});
+      modal.present();
     }
 }
