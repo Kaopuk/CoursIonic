@@ -11,7 +11,9 @@ export class AppareilsServices {
         'Consommation : 173kwh/an',
 
       ],
-      isOn: true
+      isOn: true,
+      startTime: '',
+      endTime: ''
     },
     {
       name: 'Télévision',
@@ -19,7 +21,9 @@ export class AppareilsServices {
         'Dimension : 40 pouces',
         'Consommation : 22kwh/an'
       ],
-      isOn: true
+      isOn: true,
+      startTime: '',
+      endTime: ''
     },
     {
       name: 'Ordinateur',
@@ -27,8 +31,14 @@ export class AppareilsServices {
         'Marque : fait maison',
         'Consommation  : 500 kwh/an'
       ],
-      isOn: false
+      isOn: false,
+      startTime: '',
+  endTime: ''
     }
   ];
+
+  addAppareil(appareil:Appareil) {
+    this.appareilsList.push(appareil);
+  }
 
 }

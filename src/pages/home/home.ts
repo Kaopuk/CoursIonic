@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import {AppareilsPage} from '../appareils/appareils';
+import { AppareilsPage } from '../appareils/appareils';
 
 @Component({
   selector: 'page-home',
